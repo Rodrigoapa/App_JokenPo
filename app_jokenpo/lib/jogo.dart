@@ -1,6 +1,3 @@
-// Titulo: App JokenPo.
-// Autor: Rodrigo Almeida.
-// Data: 01/11/2021.
 import 'dart:math';
 import 'package:flutter/material.dart';
 
