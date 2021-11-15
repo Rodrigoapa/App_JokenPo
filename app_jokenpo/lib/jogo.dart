@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:app_jokenpo/login_page.dart';
 import 'package:flutter/material.dart';
 
 class Jogo extends StatefulWidget {
@@ -11,6 +12,8 @@ class Jogo extends StatefulWidget {
 class _JogoState extends State<Jogo> {
   var _imageApp = AssetImage("assets/padrao.png");
   var _mensagem = "Escolha uma opção abaixo";
+  String _textApp = "Pontuação App: ";
+  String _textUsuario = "Sua pontuação: ";
   int _pontuacaoUsuario = 0;
   int _pontuacaoApp = 0;
 
@@ -62,7 +65,8 @@ class _JogoState extends State<Jogo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("JokenPo"),
+        backgroundColor: Color(0xeff6c223),
+        title: Text("JokenPô"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -125,19 +129,36 @@ class _JogoState extends State<Jogo> {
               Padding(
                 padding: EdgeInsets.only(left: 15, top: 40),
                 child: Text(
-                  "Sua pontuação: " + _pontuacaoUsuario.toString(),
+                  _textUsuario + _pontuacaoUsuario.toString(),
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 15, top: 10),
                 child: Text(
-                  "Pontuação App: " + _pontuacaoApp.toString(),
+                  _textApp + _pontuacaoApp.toString(),
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
-          )
+          ),
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    (Route<dynamic> route) => false,
+                  );
+                },
+                child: Image.asset(
+                  "assets/exit.png",
+                  height: 95,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
