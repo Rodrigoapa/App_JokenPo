@@ -7,9 +7,9 @@
 
 ---
 
-## Sobre o projeto
+## 💻 Sobre o projeto
+ Este projeto foi desenvolvido com base no curso **_Desenvolvimento Android e IOS com Flutter 2022 -Crie 15 Apps_** da [Udemy](https://www.udemy.com/).
  O clássico JokenPo, versão game mobile.
- 
  Aplicativo desenvolvido para estudos.
  
  ### 🛠 Tecnologias
